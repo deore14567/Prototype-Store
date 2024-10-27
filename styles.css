@@ -1,0 +1,208 @@
+/* General Styles */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: linear-gradient(#141e30, #243b55);
+    color: #fff;
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+header, footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+h1, h2 {
+    margin: 0;
+    padding-bottom: 20px;
+    color: #fff;
+}
+
+p {
+    margin: 0 0 20px;
+}
+
+nav.navbar {
+    text-align: center;
+    padding: 10px 0;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #03e9f4;
+    background: transparent;
+    border: 2px solid #03e9f4; /* Added border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    color: #fff;
+    background: #03e9f4; /* Added background change on hover */
+    box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4;
+}
+
+/* Section Styles */
+.education-section, .food-section, .medicine-section, .shopping-section {
+    max-width: 600px; /* Increased max width */
+    width: 90%; /* Responsive width */
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.education-section h2, .food-section h2, .medicine-section h2, .shopping-section h2 {
+    text-align: center;
+}
+
+.details-link {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #03e9f4;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+    border: 2px solid #03e9f4; /* Added border */
+    border-radius: 5px; /* Rounded corners */
+    transition: 0.3s;
+}
+
+.details-link:hover {
+    background: #03e9f4;
+    color: #fff;
+    box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4;
+}
+
+/* App Links and Deals */
+.deal-section {
+    margin: 20px auto;
+    max-width: 600px; /* Increased max width */
+    width: 90%; /* Responsive width */
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.deal-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.deal-section li {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.app-link {
+    color: #03e9f4;
+    text-decoration: none;
+    font-size: 16px;
+    margin-top: 10px;
+    display: block;
+    transition: color 0.3s;
+}
+
+.app-link:hover {
+    color: #fff;
+}
+
+/* Footer */
+footer {
+    padding: 10px;
+    font-size: 14px;
+}
+
+/* Button Animations */
+button, .details-link, .app-link {
+    position: relative;
+    overflow: hidden;
+}
+
+button span, .details-link span, .app-link span {
+    position: absolute;
+    display: block;
+}
+
+button span:nth-child(1), .details-link span:nth-child(1), .app-link span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #03e9f4);
+    animation: btn-anim1 1s linear infinite;
+}
+
+button span:nth-child(2), .details-link span:nth-child(2), .app-link span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #03e9f4);
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+
+button span:nth-child(3), .details-link span:nth-child(3), .app-link span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #03e9f4);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: 0.5s;
+}
+
+button span:nth-child(4), .details-link span:nth-child(4), .app-link span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #03e9f4);
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: 0.75s;
+}
+
+@keyframes btn-anim1 {
+    0% { left: -100%; }
+    50%, 100% { left: 100%; }
+}
+
+@keyframes btn-anim2 {
+    0% { top: -100%; }
+    50%, 100% { top: 100%; }
+}
+
+@keyframes btn-anim3 {
+    0% { right: -100%; }
+    50%, 100% { right: 100%; }
+}
+
+@keyframes btn-anim4 {
+    0% { bottom: -100%; }
+    50%, 100% { bottom: 100%; }
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    header, footer {
+        padding: 15px;
+    }
+
+    button, .details-link, .app-link {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    .education-section, .food-section, .medicine-section, .shopping-section,
+    .deal-section {
+        width: 95%; /* Full width on mobile */
+    }
+}
